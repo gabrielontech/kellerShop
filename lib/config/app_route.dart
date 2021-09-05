@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kellershop/models/model.dart';
 import 'package:kellershop/views/views_route.dart';
 
 class AppRouter {
@@ -17,9 +18,9 @@ class AppRouter {
       case WishlistScreen.routeName:
         return WishlistScreen.route();
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(product: settings.arguments as Product);
       case CatalogScreen.routeName:
-        return CatalogScreen.route();
+        return CatalogScreen.route(category: settings.arguments as Category);
 
       default:
         return _errorRoute();
